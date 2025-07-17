@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But not these files/folders (negate with !)
+!/lib/
+!/pubspec.yaml
+!/README.md
+!/.gitignore

@@ -13,9 +13,18 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen>{
+  var currentQuestionIndex=0;
+
+  answerQuestion(){
+    setState(() {
+      currentQuestionIndex+=1;
+    });
+    
+  }
+  
   @override
   Widget build(context){
- final currentQuestion=questions[0];
+ final currentQuestion=questions[currentQuestionIndex];
 
     return SizedBox(
       width:double.infinity,
@@ -37,7 +46,7 @@ class _QuestionsScreenState extends State<QuestionsScreen>{
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: AnswerButton(
                 answerText: answer,
-                onTap: () {},
+                onTap: answerQuestion,
               ),
               ),
          ),
